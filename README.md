@@ -2,6 +2,10 @@
 
 A web-based tool to compare two blocks of text and highlight differences with support for line-by-line and word-by-word comparison modes.
 
+![Text Diff Checker](preview/1.png)
+
+![Text Diff Checker](preview/2.png)
+
 ## Features
 
 - **Line-by-Line Mode**: Compare texts line by line, showing which lines were added, removed, or unchanged
