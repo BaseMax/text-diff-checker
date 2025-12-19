@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Diff Checker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Text Diff Checker</h1>
+            <p>Compare two blocks of text and highlight differences</p>
+        </header>
+
+        <div class="controls">
+            <label for="mode">Comparison Mode:</label>
+            <select id="mode">
+                <option value="line">Line-by-Line</option>
+                <option value="word">Word-by-Word</option>
+            </select>
+            <button id="compareBtn">Compare</button>
+            <button id="clearBtn">Clear</button>
+        </div>
+
+        <div class="input-section">
+            <div class="text-input">
+                <h3>Original Text</h3>
+                <textarea id="text1" placeholder="Enter original text here..."></textarea>
+            </div>
+            <div class="text-input">
+                <h3>Modified Text</h3>
+                <textarea id="text2" placeholder="Enter modified text here..."></textarea>
+            </div>
+        </div>
+
+        <div class="output-section">
+            <h3>Comparison Result</h3>
+            <div class="legend">
+                <span class="legend-item"><span class="legend-color removed"></span> Removed</span>
+                <span class="legend-item"><span class="legend-color added"></span> Added</span>
+                <span class="legend-item"><span class="legend-color unchanged"></span> Unchanged</span>
+            </div>
+            <div id="output" class="output"></div>
+        </div>
+    </div>
+
+    <script src="diff.js"></script>
+</body>
+</html>
