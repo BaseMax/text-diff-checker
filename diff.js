@@ -35,19 +35,19 @@ function getLCS(arr1, arr2) {
 
     while (i > 0 || j > 0) {
         if (i > 0 && j > 0 && arr1[i - 1] === arr2[j - 1]) {
-            diff.unshift({ type: 'unchanged', value: arr1[i - 1] });
+            diff.push({ type: 'unchanged', value: arr1[i - 1] });
             i--;
             j--;
         } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
-            diff.unshift({ type: 'added', value: arr2[j - 1] });
+            diff.push({ type: 'added', value: arr2[j - 1] });
             j--;
         } else if (i > 0) {
-            diff.unshift({ type: 'removed', value: arr1[i - 1] });
+            diff.push({ type: 'removed', value: arr1[i - 1] });
             i--;
         }
     }
 
-    return diff;
+    return diff.reverse();
 }
 
 // Line-by-line comparison
@@ -111,7 +111,7 @@ function performComparison() {
 
     if (!text1 && !text2) {
         output.classList.add('empty');
-        output.textContent = 'Please enter text in both fields to compare.';
+        output.textContent = 'Please enter text in at least one field to compare.';
         return;
     }
 
